@@ -19,6 +19,7 @@ int writeFile(string filename)
 
     cout << "Enter the number of Employees: ";
     cin >> num;
+    ofs << num << endl;
  
     for (int i=0; i<num;i++) {
          cout << "Enter ID Number: ";
@@ -29,7 +30,7 @@ int writeFile(string filename)
          cin >> Department;
          cout << "Enter Salary: ";
          cin >> salary;
-         ofs << num << '\t' << ID << '\t' << Ename << "\t" << Department << "\t" << salary << endl;
+         ofs << ID << '\t' << Ename << "\t" << Department << "\t" << salary << endl;
     }
     ofs.close();
     return num;
