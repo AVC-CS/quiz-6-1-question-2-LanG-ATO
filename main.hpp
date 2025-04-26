@@ -2,7 +2,7 @@
 #include <fstream>
 using namespace std;
 
-void writeFile(string filename)
+int writeFile(string filename)
 {
     int num, ID;
     string Ename, Department;
@@ -32,16 +32,17 @@ void writeFile(string filename)
          ofs << num << '\t' << ID << '\t' << Ename << "\t" << Department << "\t" << salary << endl;
     }
     ofs.close();
+    return num;
 }
 
 
 
 
 
-void readFile(string filename)
+int readFile(string filename)
 {
 
-    int num, ID;
+    int num=0, ID;
     string Ename, Department;
     double salary;
     double total, average;
@@ -54,12 +55,11 @@ void readFile(string filename)
         cout << "File Open Error\n";
         exit(0);
     }
-    for (int i = 0; i < num; i++) {
-        ifs >> ID >> Ename >> Department >> salary;
+    while(ifs >> ID >> Ename >> Department >> salary) {
         total += salary;  
         
     
-        average = total / (i + 1);
+        average = total / num;
 
      
         cout << "ID: " << ID
@@ -70,4 +70,5 @@ void readFile(string filename)
              << " Average: " << average << endl;
     }
     ifs.close();
+    return num;
 }
