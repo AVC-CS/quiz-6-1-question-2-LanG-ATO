@@ -42,7 +42,7 @@ int writeFile(string filename)
 int readFile(string filename)
 {
 
-    int num=0, ID;
+    int num, ID;
     string Ename, Department;
     double salary;
     double total, average;
