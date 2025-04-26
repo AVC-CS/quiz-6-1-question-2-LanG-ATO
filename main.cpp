@@ -7,9 +7,9 @@ int main()
     int empN;
 
     filename = "employee.txt";
-    empN = writeFile(filename);
+    empN = writeFile(employee.txt);
     cout << "File created with " << empN << " employee records\n";
 
-    empN = readFile(filename);
+    empN = readFile(employee.txt);
     cout << "The total number of employess read " << empN << endl;
 }
